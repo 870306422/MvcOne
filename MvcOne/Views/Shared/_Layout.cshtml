@@ -1,39 +1,72 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
     <style type="text/css">
-        ul li{
-            float:left;
+        ul li {
+            float: left;
         }
     </style>
+    <script type="text/javascript">
+        function cli() {
+            var user = $("#user").val();
+            var pwd = $("#pwd").val();
+            if (user == "" && pwd == "") {
+                $("#erro").html("请输入登录名或密码");
+            } else {
+                $("#erro").html("正确");
+            }
+        };
+    </script>
 </head>
 
 <body>
-    <div>
+    <div style="float:none;width:100%;margin-top:-50px;">
         <div>
-            <img src="~/image/alibaba.jpg" style="float:left"/>
+            <img src="~/image/alibaba.jpg" style="float:left" />
+
         </div>
         <div>
-            <ul style="list-style:none;">
-                <li>阿里云首页 |</li>
-                <li>阿里云首页 |</li>
-                <li>阿里云首页 |</li>
-                <li>阿里云首页 |</li>
+            <ul style="list-style:none;line-height:80px">
+                <li>阿里云首页&nbsp;&nbsp; |&nbsp;&nbsp;</li>
+                <li>阿里云首页 &nbsp;&nbsp;|&nbsp;&nbsp;</li>
+                <li>阿里云首页&nbsp;&nbsp; |&nbsp;&nbsp;</li>
+                <li>阿里云首页 &nbsp;&nbsp;</li>
             </ul>
         </div>
     </div>
+    <br />
+    <br />
+    <br />
+    <div style="float:none"> <hr /> </div>
+
     <div class="container body-content" style="float:none">
         @RenderBody()
-        <hr />
-        
+        <div style="width:100%;">
+            <div style="float:left;margin-left:50px">
+                <img src="~/image/alimail.jpg" />
+            </div>
+            <div style="float:right;margin-top:50px;margin-right:100px">
+                <form>
+                    登录名：<br />
+                    <input type="text" placeholder="请输入登录名" id="user" required /><br />
+                    密码：<br />
+                    <input type="password" placeholder="请输入密码" id="pwd" required />
+                    <br />
+                    <br />
+                    <input type="submit" value="登录" style="width:200px;height:30px;background-color:orange;border:0px;color:white" onclick="cli()"/>
+                    <br />
+                    <p id="erro"></p>
+                </form>
+            </div>
+        </div>
     </div>
 
-   
+
 </body>
 </html>
