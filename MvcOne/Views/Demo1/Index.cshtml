@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@section scripts
+    {
+    <h2>填坑</h2>
+}
+@*razor视图基本语法*@
+@{
+    string name = "ads";
+}
+<p><textarea>我是</textarea>@name ,lll</p>
+@for (int i = 0; i < 10; i++)
+{
+    <p>我考了 @i 名</p>
+}
+@*使用Razor输出当前时间*@
+@{
+    int time = @System.DateTime.Now.Year;
+}
+<p>当前时间 @time</p>
+@if ( (time%4 == 0 && time%100 !=0) ||  time%400 ==0) {
+    <p>是闰年</p>
+}
+else
+{
+   <p> 不是闰年 </p>
+}
+
+
