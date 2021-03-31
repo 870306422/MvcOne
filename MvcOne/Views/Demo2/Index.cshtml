@@ -2,5 +2,36 @@
 @{
     ViewBag.Title = "Index";
 }
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+    function cli() {
+        var user = $("#user").val();
+        var pwd = $("#pwd").val();
+        if (user == "" && pwd == "") {
+            $("#erro").html("请输入登录名或密码").addClass("col");
+        } else {
+            $("#erro").html("正确");
+        }
+    };
+</script>
+<style type="text/css">
+    .col{
+        color:red;
+    }
+</style>
+@section session
+{
+    <form>
+        登录名：<br />
+        <input type="text" placeholder="请输入登录名" id="user" required /><br />
+        密码：<br />
+        <input type="password" placeholder="请输入密码" id="pwd" required />
+        <br />
+        <br />
+        <input type="submit" value="登录" style="width:200px;height:30px;background-color:orange;border:0px;color:white" onclick="cli()" />
+        <br />
+        <p id="erro"></p>
+    </form>
+}
 
 
