@@ -10,6 +10,10 @@
     <style type="text/css">
         ul li {
             float: left;
+            text-decoration: none
+        }
+        a {
+            text-decoration: none;
         }
     </style>
     
@@ -23,10 +27,10 @@
         </div>
         <div>
             <ul style="list-style:none;line-height:80px">
-                <li>阿里云首页&nbsp;&nbsp; |&nbsp;&nbsp;</li>
-                <li>阿里云首页 &nbsp;&nbsp;|&nbsp;&nbsp;</li>
-                <li>阿里云首页&nbsp;&nbsp; |&nbsp;&nbsp;</li>
-                <li>阿里云首页 &nbsp;&nbsp;</li>
+                <li><a href="@Url.Action("index","Home")"> 阿里云首页&nbsp;&nbsp; |&nbsp;&nbsp;</a></li>
+                <li><a href="@Url.Action("about","Home")">阿里云首页 &nbsp;&nbsp;|&nbsp;&nbsp;</a></li>
+                <li><a href="@Url.Action("contact","Home")">阿里云首页&nbsp;&nbsp; |&nbsp;&nbsp;</a></li>
+                <li> @Html.ActionLink("阿里云首页","index", "Home") &nbsp;&nbsp;</li>
             </ul>
         </div>
     </div>
@@ -42,7 +46,7 @@
                 <img src="~/image/alimail.jpg" />
             </div>
             <div style="float:right;margin-top:50px;margin-right:100px">
-                @RenderSection("session",required:true)
+                @RenderSection("sessi",required:false)
             </div>
         </div>
     </div>
